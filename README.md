@@ -57,8 +57,45 @@ protected: 被声明为公用的（protected）成员，它不能被类外访问
 #include <fstream>
 ofstream         //文件写操作 内存写入存储设备 
 ifstream         //文件读操作，存储设备读区到内存中
-fstream          //读写操作，对打开的文件可进行读写操作
-   
+fstream          //读写操作，对打开的文件可进行读写操作   
 ```  
 #### 打开文件
+在fstream类中，成员函数open（）实现打开文件的操作，从而将数据流和文件进行关联，通过ofstream,ifstream,fstream对象进行对文件的读写操作
+```
+public member function
+ 
+void open ( const char * filename,
+            ios_base::openmode mode = ios_base::in | ios_base::out );
+ 
+void open(const wchar_t *_Filename,
+        ios_base::openmode mode= ios_base::in | ios_base::out,
+        int prot = ios_base::_Openprot)；   
+```  
+参数：
+filename   操作文件名
+
+mode       打开文件的方式
+
+prot       打开文件的属性
+
+很多程序中，可能会碰到ofstream out("Hello.txt"), ifstream in("..."),fstream foi("...")这样的的使用，并没有显式的去调用open（）函数就进行文件的操作，直接调用了其默认的打开方式，因为在stream类的构造函数中调用了open()函数,并拥有同样的构造函数，所以在这里可以直接使用流对象进行文件的操作；
+
+当使用默认方式进行对文件的操作时，你可以使用成员函数is_open()对文件是否打开进行验证；
+
+**状态标志符的验证**(Verification of state flags)
+除了eof()以外，还有一些验证流的状态的成员函数（所有都返回bool型返回值）：
+
+bad()
+如果在读写过程中出错，返回 true 。例如：当我们要对一个不是打开为写状态的文件进行写入时，或者我们要写入的设备没有剩余空间的时候。
+
+fail()
+除了与bad() 同样的情况下会返回 true 以外，加上格式错误时也返回true ，例如当想要读入一个整数，而获得了一个字母的时候。
+
+eof()
+如果读文件到达文件末尾，返回true。
+
+good()
+这是最通用的：如果调用以上任何一个函数返回true 的话，此函数返回 false 。
+
+要想重置以上成员函数所检查的状态标志，你可以使用成员函数clear()，没有参数。
 
