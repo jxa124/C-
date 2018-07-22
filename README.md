@@ -35,3 +35,13 @@ using编译命令：如果与局部名称发生冲突，则局部名称将覆盖
 ```
 using namespace std;
 ```
+## 类：public、private、protected的作用
+如果在类的定义中既不指定private，也不指定public，则系统就默认为是私有的
+
+private: 被声明为私有的（private）成员，只能被本类中的成员函数引用，类外不能调用（友元类除外）
+
+public: 被声明为公用的（public）成员，既可以被本类中的成员函数所引用，也可以被类的作用域内的其他函数引用。
+
+protected: 被声明为公用的（protected）成员，它不能被类外访问（这点与私有成员类似），但可以被派生类的成员函数访问
+
+> 假如有个基类叫Father，代表父亲，它有个protected接口叫money()，Father有个子类叫Son，即儿子，儿子有个接口叫buyBook()，buyBook()中可以调用到Father中的money()，除了这个写好的函数以外，Son都是不能调用到Father的money()接口的，即爸爸给儿子规定好了，你只有买书来学习可以找我要钱，其他任何理由都不能找我要钱，这样就可以把爸爸的钱给“保护”起来了
