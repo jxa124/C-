@@ -50,3 +50,7 @@ protected: 被声明为公用的（protected）成员，它不能被类外访问
 **构造函数**：会在每次创建类的新对象时执行；构造函数的名称与类的名称是完全相同的，并且不会返回任何类型，也不会返回 void；构造函数可用于为某些成员变量设置初始值
 
 **析构函数**：会在每次删除所创建的对象时执行；析构函数的名称与类的名称是完全相同的，只是在前面加了个波浪号（~）作为前缀，它不会返回任何值，也不能带有任何参数。析构函数有助于在跳出程序（比如关闭文件、释放内存等）前释放资源
+
+## 头文件 <fstream>
+![stream png](https://img-blog.csdn.net/20161209145537613?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYTEyNTkzMDEyMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+   
