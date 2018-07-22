@@ -53,4 +53,12 @@ protected: 被声明为公用的（protected）成员，它不能被类外访问
 
 ## 头文件 <fstream>
 ![stream png](https://github.com/jxa124/C-/blob/master/stream.gif)
+```
+#include <fstream>
+ofstream         //文件写操作 内存写入存储设备 
+ifstream         //文件读操作，存储设备读区到内存中
+fstream          //读写操作，对打开的文件可进行读写操作
    
+```  
+#### 打开文件
+
