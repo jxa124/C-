@@ -119,3 +119,49 @@ getline（istream &in, string &s）
 > * 读到一个新行
 > * 达到字符串的最大长度
 > * 如果getline没有读入字符，将返回false，可用于判断文件是否结束
+
+## namespace的用法
+namespace通常用来给类或者函数做个区间定义，以使编译器能准确定位到适合的类或者函数；
+例如：自行实现了一个函数test(void)，而在该项目的库函数内也定义了一个函数test(void);当你调用test()，用namespace编译器就知道调用哪个了；
+
+namespace定义方法
+```
+namespace namespace_name {
+    // code declarations
+    // 函数，类名等等
+}   
+```  
+namespace调用方法
+```
+name::code; //此处code就是对应namespace内定义的类名或者函数名等等   
+```
+实际调用举例：
+```
+#include <iostream>
+using namespace std;
+    
+// first name space
+namespace first_space{
+    void func(){
+        cout << "Inside first_space" << endl;
+    }
+}
+    
+// second name space
+namespace second_space{
+    void func(){
+        cout << "Inside second_space" << endl;
+    }
+}
+    
+int main () {
+     
+// Calls function from first name space.
+first_space::func();
+       
+// Calls function from second name space.
+second_space::func(); 
+    
+return 0;
+} 
+```
