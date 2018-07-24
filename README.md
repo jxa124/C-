@@ -374,20 +374,18 @@ stringstream则是用于C++风格的字符串的输入输出的;
 
 在这两种情况下，元素都是以有序关系存储的，以此支持高效率的存储和检索
 
-map:
+map: 
 
-需要插入 #include <map>
-   
 ```
+#include <map>
 std:map<int,string> personnel;
 ```
 set:
 
 map中键/值对构成,好比一个地址和电话号码以人名为键值,相反地,set只是键的集合;
-
-需要插入 #include <set>
    
 ```
+#include <set>
 set<string> exclusion_set;
 ```
 ## 迭代器
