@@ -165,3 +165,10 @@ second_space::func();
 return 0;
 } 
 ```
+## 无符号类型
+unsinged int，unsigned long，size_t, std::size_t
+
+四种类型都是无符号类型，是用以表示元素个数或者数组索引的最佳类型。在作为函数参数时，不需像有符号类型那样检测值是否小于零;
+
+
+
