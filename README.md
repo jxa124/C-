@@ -362,3 +362,40 @@ First Distance : F : 11 I : 10
 Second Distance :F : 5 I : 11
 Third Distance :F : 70 I : 10
 ```
+## sstream
+istringstream是由一个string对象构造而来，从一个string对象读取字符;
+
+ostringstream同样是有一个string对象构造而来，向一个string对象插入字符;
+
+stringstream则是用于C++风格的字符串的输入输出的;
+
+## 关联容器
+当我们只想知道一个值是否存在时，set 最有用处，希望存储（也可能修改 一个相关的值）时，map 最为有用 
+
+在这两种情况下，元素都是以有序关系存储的，以此支持高效率的存储和检索
+
+map:
+
+需要插入 #include <map>
+   
+```
+std:map<int,string> personnel;
+```
+set:
+
+map中键/值对构成,好比一个地址和电话号码以人名为键值,相反地,set只是键的集合;
+
+需要插入 #include <set>
+   
+```
+set<string> exclusion_set;
+```
+## 迭代器
+提供了一种一般化的方法，对顺序或关联容器类型中的每个元素进行连续访问；
+
+顺序容器 vector 迭代器类型为 iterator
+
+关联容器 map/set 迭代器类型为 const_iterator
+
+> * 因为set和map这种类型的容器，需要根据key来保持有序或者是确保元素的唯一性，所以不允许用户直接对元素进行修改。如果允许用户在使用iterator时直接对元素进行修改间接的修改了元素的键值，很有可能导致非唯一性或无序
+> * 正是由于这种类型的容器需要保持元素的有序性，底层可能用了某种数据结构来保存（如：堆），如果频繁的修改元素，则内部可能需要多次进行排序，导致效率低下
